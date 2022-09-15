@@ -1,4 +1,3 @@
-@ -1,38 +1,40 @@
 let now = new Date();
 let months = [
   "January",
@@ -32,8 +31,7 @@ if (hour < 10) {
   hour = `0${hour}`;
 }
 let min = now.getMinutes();
-if (min < 10) {
-  min = `0${min}`;
+if (min < 10) min = `0${min}`;
 let h2 = document.querySelector("h2");
 let h3 = document.querySelector("h3");
 let h4 = document.querySelector("h4");
