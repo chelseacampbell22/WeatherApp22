@@ -40,6 +40,7 @@ h3.innerHTML = `${day}`;
 h4.innerHTML = `${hour}: ${min}`;
 
 function displayWeatherCondition(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#weatherType").innerHTML =
     response.data.weather[0].main;
@@ -52,6 +53,10 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = ` ${Math.round(
     response.data.wind.speed
   )}km/h Wind Speed`;
+let iconElement=document.querySelector(#icon);
+iconElement.setAttribute(
+  "src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.@2x.png`
+)
 }
 
 function searchCity(city) {
