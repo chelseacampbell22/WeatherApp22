@@ -3,7 +3,7 @@ body {
   font-family: "Fjalla One", sans-serif;
   color: white;
 }
-.section1 {
+.forecast {
   background: rgb(0, 31, 117);
   padding-bottom: 50px;
 }
@@ -99,6 +99,6 @@ p {
   display: block;
   text-align: center;
 }
-.section3 {
+.searchBar {
   background: rgb(0, 31, 117);
 }
