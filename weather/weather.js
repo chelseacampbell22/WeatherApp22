@@ -1,41 +1,39 @@
-function formatDate(timestamp) {
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let month = months[now.getMonth()];
-  let date = now.getDate();
-  let year = now.getFullYear();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[now.getDay()];
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let min = now.getMinutes();
-  if (min < 10) {
-    min = `0${min}`;
-  }
-  return `${month} ${date} ${year} ${day} ${hour} ${min}`;
+@ -1,38 +1,40 @@
+let now = new Date();
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let month = months[now.getMonth()];
+let date = now.getDate();
+let year = now.getFullYear();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
 }
+let min = now.getMinutes();
+if (min < 10) {
+  min = `0${min}`;
 let h2 = document.querySelector("h2");
 let h3 = document.querySelector("h3");
 let h4 = document.querySelector("h4");
