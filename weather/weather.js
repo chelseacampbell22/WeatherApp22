@@ -95,9 +95,8 @@ function displayCelciusTemperature(event){
 function displayfahrTemperature(event){
   event.preventDefault();
   let temperatureElement=document.querySelector("#temperature");
-  temperatureElement.innerHTML=Math.round(fahrenTemp);
+  temperatureElement.innerHTML=Math.round(fahrTemp);
 }
-
 
 let fahrTemp=null; 
 
