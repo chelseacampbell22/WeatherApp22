@@ -98,6 +98,7 @@ function displayfahrTemperature(event){
   temperatureElement.innerHTML=Math.round(fahrenTemp);
 }
 
+
 let fahrTemp=null; 
 
 
