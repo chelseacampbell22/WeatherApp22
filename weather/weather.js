@@ -53,6 +53,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = ` ${Math.round(
     response.data.wind.speed
   )}km/h Wind Speed`;
+  
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -85,14 +86,14 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function displayCelciusTemperature(event){
+function displayCelciusTemp(event){
   event.preventDefault();
-  let celciusTemperature=(fahrTemp - 32) * 5/9 ;
+  let celciusTemp=(fahrTemp - 32) * 5/9 ;
   let temperatureElement=document.querySelector("#temperature");
-  temperatureElement.innerHTML=Math.round(celciusTemperature);
+  temperatureElement.innerHTML=Math.round(celciusTemp);
 }
 
-function displayfahrTemperature(event){
+function displayfahrTemp(event){
   event.preventDefault();
   let temperatureElement=document.querySelector("#temperature");
   temperatureElement.innerHTML=Math.round(fahrTemp);
@@ -100,14 +101,16 @@ function displayfahrTemperature(event){
 
 let fahrTemp=null; 
 
-let currentLocationButton = document.querySelector("#currentLocation");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
 let celciusLink=document.querySelector("#celciusLink");
-celciusLink.addEventListener("click",displayCelciusTemperature)
+celciusLink.addEventListener("click",displayCelciusTemp)
 
 let fahrLink=document.querySelector("#fahrLink");
-fahrLink.addEventListener("click",displayfahrTemperature);
+fahrLink.addEventListener("click",displayfahrTemp);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector("#currentLocation");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+
