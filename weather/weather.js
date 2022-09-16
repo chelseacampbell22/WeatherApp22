@@ -52,11 +52,12 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = ` ${Math.round(
     response.data.wind.speed
   )}km/h Wind Speed`;
-  document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${reponse.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
 function searchCity(city) {
