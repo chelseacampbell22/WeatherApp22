@@ -46,7 +46,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}°F`;
-  fahrenTemp=response.data.main.temp;
+  fahrTemp=response.data.main.temp;
   document.querySelector(
     "#humidity"
   ).innerHTML = `${response.data.main.humidity}% Humidity`;
@@ -99,7 +99,6 @@ function displayfahrTemperature(event){
 }
 
 let fahrTemp=null; 
-
 
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", getCurrentLocation);
