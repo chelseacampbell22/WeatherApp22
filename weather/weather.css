@@ -34,6 +34,10 @@ p,
   font-size: 20px;
   background-color: blue;
 }
+.icon {
+  text-align: center;
+  size: 30px;
+}
 .Monday {
   width: 11em;
   background-color: rgb(45, 66, 255);
