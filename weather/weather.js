@@ -45,7 +45,7 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°C`;
+  )}°F`;
   document.querySelector(
     "#humidity"
   ).innerHTML = `${response.data.main.humidity}% Humidity`;
@@ -62,7 +62,7 @@ function displayWeatherCondition(response) {
 
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -74,7 +74,7 @@ function handleSubmit(event) {
 
 function searchLocation(position) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -83,8 +83,17 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+
+function displayCelciusTemperature(event){
+  event.preventDefault();
+  alert("Link clicked");
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let celciusLink=document.querySelector("#celciusLink");
+celciusLink.addEventListener("click",displayCelciusTemperature);
