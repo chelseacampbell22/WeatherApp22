@@ -23,6 +23,17 @@ ul {
 ul li {
   display: inline-block;
 }
+p,
+.weatherType,
+.wind,
+.humidity,
+.temperature {
+  display: block;
+  border: rgb(0, 31, 117);
+  text-align: center;
+  font-size: 20px;
+  background-color: blue;
+}
 .Monday {
   width: 11em;
   background-color: rgb(45, 66, 255);
@@ -79,22 +90,7 @@ h3,
 h4 {
   padding-left: 50px;
 }
-p {
-  border: 2px solid blue;
-  padding: 5px auto;
-  margin: 5px auto;
-  width: 20em;
-  background-color: rgb(45, 66, 255);
-  border: 2px solid black;
-  padding: 10px;
-  word-wrap: break-word;
-  font-size: 20px;
-  text-align: center;
-}
-.pic {
-  display: block;
-  text-align: center;
-}
+
 .container {
   display: block;
   text-align: center;
