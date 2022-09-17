@@ -18,15 +18,19 @@
     <link rel="stylesheet" href="weather/weather.css" />
   </head>
   <body>
-    <div class="forecast">
     <h1 id="city">Current Location</h1>
-    <ul>
-        <li class="Monday">Monday</br>🌧️</br>100℉</li>
-        <li class="Tuesday">Tuesday</br>☀️</br>103℉</li>
-        <li class="Wednesday">Wednesday</br>☀️</br>105℉</li>
-        <li class="Thursday">Thursday</br>⛈️</br>99℉</li>
-        <li class="Friday">Friday</br>⛈️</br>101℉</li>
-    </ul>
+    <div class="forecast">
+      <div class="row">
+        <div class="col-2">
+          <div class="forecast-day">Sunday</div>
+        <img src="weather/09n.png" alt="" width="38"/>
+          <div class="forecast-temp">
+          <span class="forecast-temp-max">100℉</span>
+          <span class="forecast-temp-min">96℉</span>
+      
+    </div>
+    </div>
+    </div>
     </div>
     <hr>
     <div class="currentDate">
@@ -38,7 +42,7 @@
      <p>Currently...</br>
       <div class="icon">
       <img src="weather/09n.png" alt="rain" class="image" id="icon" />
-     <span class="weatherType" id="weatherType">Overcast</span>
+      <span class="weatherType" id="weatherType">Overcast</span>
       <span class="temperature" id="temperature">19</span>
       <span class="units"><a href="#" id="fahrLink">°F</a> | <a href="#" id="celciusLink">°C</a></span>
       <span class="humidity" id="humidity">Humidity: 30%</span>

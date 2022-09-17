@@ -46,14 +46,14 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}°F`;
-  fahrTemp=response.data.main.temp;
+  fahrTemp = response.data.main.temp;
   document.querySelector(
     "#humidity"
   ).innerHTML = `${response.data.main.humidity}% Humidity`;
   document.querySelector("#wind").innerHTML = ` ${Math.round(
     response.data.wind.speed
   )}km/h Wind Speed`;
-  
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -86,31 +86,29 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function displayCelciusTemp(event){
+function displayCelciusTemp(event) {
   event.preventDefault();
-  let celciusTemp=(fahrTemp - 32) * 5/9 ;
-  let temperatureElement=document.querySelector("#temperature");
-  temperatureElement.innerHTML=Math.round(celciusTemp);
+  let celciusTemp = ((fahrTemp - 32) * 5) / 9;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemp);
 }
 
-function displayfahrTemp(event){
+function displayfahrTemp(event) {
   event.preventDefault();
-  let temperatureElement=document.querySelector("#temperature");
-  temperatureElement.innerHTML=Math.round(fahrTemp);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 
-let fahrTemp=null; 
+let fahrTemp = null;
 
-let celciusLink=document.querySelector("#celciusLink");
-celciusLink.addEventListener("click",displayCelciusTemp)
+let celciusLink = document.querySelector("#celciusLink");
+celciusLink.addEventListener("click", displayCelciusTemp);
 
-let fahrLink=document.querySelector("#fahrLink");
-fahrLink.addEventListener("click",displayfahrTemp);
+let fahrLink = document.querySelector("#fahrLink");
+fahrLink.addEventListener("click", displayfahrTemp);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-
